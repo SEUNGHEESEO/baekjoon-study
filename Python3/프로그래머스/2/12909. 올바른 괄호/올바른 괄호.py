@@ -1,4 +1,24 @@
 def solution(s):
+    """
+    # 스택 미사용 버전
+    answer = True
+    if s[0] == ")":
+        answer = False
+    else:
+        cnt = 0
+        for i in s:
+            if i == "(":
+                cnt += 1
+            elif i == ")": 
+                cnt -= 1
+            if cnt < 0: 
+                answer = False
+                break
+        if cnt != 0:
+            answer = False
+    return answer
+    """
+    # 스택 사용 버전
     stack = []
     
     for char in s:
